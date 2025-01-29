@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Pengelolaan Magang</title>
+    <title>Sistem Pengelolaan Jadwal Nunu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .hero-section {
             background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
             color: white;
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
         }
@@ -25,15 +25,30 @@
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
+        
+        /* Footer Styles */
+        footer {
+            margin-top: auto;
+            position: relative;
+        }
+        
+        footer a {
+            transition: opacity 0.3s;
+        }
+        
+        footer a:hover {
+            opacity: 0.8;
+            text-decoration: none;
+        }
     </style>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <!-- Navigation -->
     <nav class="navbar navbar-dark bg-dark py-3">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <i class="fas fa-calendar-alt me-2"></i>
-                MagangKu
+                Jadwal PKL ku
             </a>
         </div>
     </nav>
@@ -45,12 +60,12 @@
                 <div class="col-lg-8">
                     <h1 class="display-4 fw-bold mb-4">
                         <i class="fas fa-rocket me-2"></i>
-                        Sistem Pengelolaan Magang
+                        Sistem Pengelolaan Jadwal PKL
                     </h1>
-                    <p class="lead mb-5">Kelola jadwal magang perusahaan Anda dengan mudah dan efisien</p>
+                    <p class="lead mb-5">Kelola jadwal PKL Kamu dengan mudah dan efisien</p>
                     <a href="jadwal.html" class="btn btn-light btn-lg px-5 py-3">
                         <i class="fas fa-calendar-day me-2"></i>
-                        Lihat Jadwal
+                        Ayangg Liat Jadwal
                     </a>
                 </div>
             </div>
@@ -65,8 +80,8 @@
                     <div class="card feature-card h-100 p-4">
                         <div class="card-body text-center">
                             <i class="fas fa-users fa-3x text-primary mb-3"></i>
-                            <h4 class="card-title">Manajemen Peserta</h4>
-                            <p class="card-text">Kelola data peserta magang secara terpusat dan terorganisir</p>
+                            <h4 class="card-title">Manajemen Penjadwalan</h4>
+                            <p class="card-text">Kelola data penjadwalan secara terpusat</p>
                         </div>
                     </div>
                 </div>
@@ -75,7 +90,7 @@
                         <div class="card-body text-center">
                             <i class="fas fa-clock fa-3x text-success mb-3"></i>
                             <h4 class="card-title">Jadwal Real-time</h4>
-                            <p class="card-text">Update jadwal secara langsung melalui spreadsheet</p>
+                            <p class="card-text">Update jadwal langsung dari spreadsheet</p>
                         </div>
                     </div>
                 </div>
@@ -84,7 +99,7 @@
                         <div class="card-body text-center">
                             <i class="fas fa-chart-line fa-3x text-danger mb-3"></i>
                             <h4 class="card-title">Analisis Data</h4>
-                            <p class="card-text">Pantau perkembangan peserta melalui dashboard interaktif</p>
+                            <p class="card-text">Dashboard analisis interaktif</p>
                         </div>
                     </div>
                 </div>
@@ -92,6 +107,17 @@
         </div>
     </div>
 
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
 </body>
 </html>
